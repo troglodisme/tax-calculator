@@ -1,6 +1,7 @@
+//display a message when page is loaded
 console.log("loaded");
-// document.getElementById("your-tax").innerHTML = "Please enter your data first.";
 
+//add element to show results in html
 let results = document.querySelector("#results");
 console.log(results);
 
@@ -8,10 +9,8 @@ console.log(results);
 //2022/2023
 //Personal allowance, 0%
 const bracket_1 = 12570;
-
 //Basic rate, 20%
 const bracket_2 = 50270;
-
 //Higher rate, 40%
 const bracket_3 = 150000;
 
@@ -19,10 +18,8 @@ const bracket_3 = 150000;
 //2021/2022
 //Personal allowance, 0%
 const bracket_1_old = 12750;
-
 //Basic rate, 20%
 const bracket_2_old = 37700;
-
 //Higher rate, 40%
 const bracket_3_old = 150000;
 
@@ -37,7 +34,17 @@ document.querySelector("#submit").addEventListener("click", function (event) {
   //get year
   const taxYear = document.querySelector('#taxYear').value;
 
-  results.classList.remove('hidden');
+  //get period
+  const taxPeriod = document.querySelector('#taxPeriod').value;
+
+  //turn monthly into yearly
+//   if (taxPeriod == "month"){
+//       console.log("month");
+//       console.log(income);
+
+//       income = income * 12;
+//       console.log(income);
+//   }
 
 //for tax year 2022/2023
 if (taxYear == 23) {
@@ -126,6 +133,8 @@ function calculateTax(taxPercentage, income){
 
 //function to update html using the results from the previous function
 function updateResult(result) {
+    results.classList.remove('hidden');
+
     document.getElementById("your-tax").innerHTML = result[0];
     document.getElementById("your-net").innerHTML = result[1];
     document.getElementById("your-monthly").innerHTML= result[2];

@@ -47,8 +47,8 @@
      
         <div class="col">
           <label for="taxCalculator" class="form-label">Period</label>
-          <select class="form-select">
-              <option selected value="year" placeholder="test">Year</option>
+          <select class="form-select" id="taxPeriod">
+              <option selected value="year">Year</option>
               <option value="month">Month</option>
               <option value="week">Week</option>
           </select>  
@@ -84,18 +84,17 @@
     
       <div id="results" class="col hidden">
 
-        <h1>Your results:</h1>
-        <p>Your will pay <span id="your-tax" >[ ]</span> in tax.</p>
+        <h1>Your results</h1>
+        <h4>💸 Your will pay <span id="your-tax" >[ ]</span> in tax 💸</h4>
         <br>
-        <p>You'll take home <span id="your-net" >[ ]</span> this year.</p>
-        <p>That's roughly <span id="your-monthly" >[ ]</span> a month!</p>
+
+        <h6>You'll take home <span id="your-net" >[ ]</span> this year.        
+            That's roughly <span id="your-monthly" >[ ]</span> a month.</h6>
 
       </div>
     
     
   </form>
-
-
   </main>
 
 
