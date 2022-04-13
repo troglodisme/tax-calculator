@@ -24,12 +24,13 @@ const bracket_2_old = 37700;
 const bracket_3_old = 150000;
 
 
-//Calculator
+//Calculator select inputs
+
 document.querySelector("#submit").addEventListener("click", function (event) {
   event.preventDefault();
 
   //get income input value
-  const income = document.querySelector('[name="income"]').value;
+  let income = document.querySelector('[name="income"]').value;
 
   //get year
   const taxYear = document.querySelector('#taxYear').value;
@@ -37,14 +38,25 @@ document.querySelector("#submit").addEventListener("click", function (event) {
   //get period
   const taxPeriod = document.querySelector('#taxPeriod').value;
 
-  //turn monthly into yearly
-//   if (taxPeriod == "month"){
-//       console.log("month");
-//       console.log(income);
 
-//       income = income * 12;
-//       console.log(income);
-//   }
+
+  //Turn monthly into yearly (rough)
+  if (taxPeriod == "month"){
+      console.log("month selected");
+      console.log(income + "in a month");
+
+      income = income * 12;
+      console.log(income + "in a year");
+  }
+
+  //Turn weekly into yearly (rough)
+  if (taxPeriod == "week"){
+    console.log("week selected");
+    console.log(income + "in a week");
+
+    income = income * 52;
+    console.log(income + "in a year");
+}
 
 //for tax year 2022/2023
 if (taxYear == 23) {
@@ -78,7 +90,6 @@ if (taxYear == 23) {
     } 
 
 
-
     //for tax year 2021/2022
 } else if (taxYear == 22) {
 
@@ -106,7 +117,6 @@ if (taxYear == 23) {
 
         let result = calculateTax(taxPercentage, income);        
         updateResult(result);
-
     }    
 }
 
@@ -116,22 +126,34 @@ else {
     
 });
 
+
+
+//Function to calculate and return tax
+
 function calculateTax(taxPercentage, income){
     
-    const taxCalculated = (taxPercentage / 100) * income;
-    // console.log(`you will pay ${taxCalculated} in taxes`);
+    //substract allowance 
+    const incomeMinusAllowance = income - bracket_1;
+    console.log(incomeMinusAllowance);
+    console.log(`your taxed income after allowance is ${incomeMinusAllowance}`); //doesn't work on bracket_1 incomes as it substracts itself 
 
+    //calculate tax percentage 
+    const taxCalculated = (taxPercentage / 100) * incomeMinusAllowance;   
+    console.log(`you will pay ${taxCalculated} in taxes`);
+
+    //calculate what's left after taxes
     const takeHome = (income - taxCalculated);
-    // console.log(`you will take ${takeHome} home after taxes this year`);
+    console.log(`you will take ${takeHome} home after taxes this year`);
 
+    //round that up for monthly salary
     let takeHomeMonthly = Math.round(takeHome / 12);
-    // console.log(`you will take ${takeHome} home after taxes in a month`);
+    console.log(`you will take ${takeHome} home after taxes in a month`);
 
     return [taxCalculated, takeHome, takeHomeMonthly];
 }
 
 
-//function to update html using the results from the previous function
+//Function to update html using the returns from the previous function
 function updateResult(result) {
     results.classList.remove('hidden');
 
@@ -143,6 +165,6 @@ function updateResult(result) {
 
 //TO DO:
 
-//make tax year parametric
-//add other options
-//understand why if you add one extra zero it breaks
+//add period
+//add age
+//add animations
