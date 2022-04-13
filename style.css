@@ -1,11 +1,41 @@
-/*
- * Globals
- */
+/* animations */
 
+
+ @keyframes cash {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+}
+
+/* body */
 
 .btnContainer{
   padding: 24px;
 }
+
+
 
 /* Custom default button */
 .btn-secondary,
@@ -72,7 +102,17 @@ body {
     user-select: none;
   }
 
-  .
+  /* money animation */
+.money{
+  scale: 1.2;
+  padding:8px;
+}
+
+.rel:hover > .money{
+  animation: cash 2s ease 0s 1 normal forwards; */
+}
+
+/* media q */
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
       font-size: 3.5rem;

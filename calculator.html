@@ -28,80 +28,77 @@
     </div>
   </header>
 
-  <main class="px-3">
-    <h1>Enter your details</h1>
-    <br>
-    <!-- <p class="lead">Data from https://www.gov.uk/income-tax-rates</p> -->
+    <main class="px-3">
+      <h1>Enter your details</h1>
+      <br>
+      <!-- <p class="lead">Data from https://www.gov.uk/income-tax-rates</p> -->
 
-    <!-- <p class="lead">
-      <a href="./calculator.html" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-    </p> -->
-
-    <form>
-      <div class="row">
-    
-        <div class="col">
-          <label for="taxCalculator" class="form-label">Your salary</label>
-          <input type="number" class="form-control" name="income" placeholder="Your income in £">  
-        </div>
-     
-        <div class="col">
-          <label for="taxCalculator" class="form-label">Period</label>
-          <select class="form-select" id="taxPeriod">
-              <option selected value="year">Year</option>
-              <option value="month">Month</option>
-              <option value="week">Week</option>
-          </select>  
-        </div>
-      </div>
+      <form>
+        <div class="row">
       
-      <div class="row">
-    
-        <div class="col">
-          <label for="taxCalculator" class="form-label">Tax Year</label>
-          <select class="form-select" id="taxYear">
-            <option selected value="23">2022/2023</option>
-            <option value="22">2021/2022</option>
-            <option value="20">2020/2021</option>
-         </select>
+          <div class="col">
+            <label for="taxCalculator" class="form-label">Your salary</label>
+            <input type="number" class="form-control" name="income" placeholder="Your income in £">  
+          </div>
+      
+          <div class="col">
+            <label for="taxCalculator" class="form-label">Period</label>
+            <select class="form-select" id="taxPeriod">
+                <option selected value="year">Year</option>
+                <option value="month">Month</option>
+                <option value="week">Week</option>
+            </select>  
+          </div>
         </div>
-     
-        <div class="col">
-          <label for="taxCalculator" class="form-label">Age</label>
-          <select class="form-select">
-            <option selected value="u66">Under 66</option>
-            <option value="66">66-74</option>
-            <option value="74">over 74</option>
-          </select> 
+        
+        <div class="row">
+      
+          <div class="col">
+            <label for="taxCalculator" class="form-label">Tax Year</label>
+            <select class="form-select" id="taxYear">
+              <option selected value="23">2022/2023</option>
+              <option value="22">2021/2022</option>
+              <option value="20">2020/2021</option>
+          </select>
+          </div>
+      
+          <div class="col">
+            <label for="taxCalculator" class="form-label">Age</label>
+            <select class="form-select">
+              <option selected value="u66">Under 66</option>
+              <option value="66">66-74</option>
+              <option value="74">over 74</option>
+            </select> 
+          </div>
+      
         </div>
+
+        <div class="col btnContainer">
+          <button id="submit" type="submit" class="btn btn-primary padding-lg">SUBMIT</button>
+
+        </div>
+      
+        <div class="rel" id="results" class="col hidden">
+
+          <h1 class="text-primary">Your results</h1>
+
+          <div class="money">💸</div>
+
+          <h4>Your will pay £<span id="your-tax">[ ]</span> in tax</h4>
+          <br>
+          <h6>You'll take home £<span id="your-net" >[ ]</span> this year.        
+              That's roughly £<span id="your-monthly" >[ ]</span> a month.</h6>
+
+        </div>    
+    </form>
     
-      </div>
-
-      <div class="col btnContainer">
-        <button id="submit" type="submit" class="btn btn-primary padding-lg">SUBMIT</button>
-
-      </div>
-    
-      <div id="results" class="col hidden">
-
-        <h1 class="text-primary">Your results</h1>
-        <h4>💸 Your will pay £<span id="your-tax" >[ ]</span> in tax 💸</h4>
-        <br>
-
-        <h6>You'll take home £<span id="your-net" >[ ]</span> this year.        
-            That's roughly £<span id="your-monthly" >[ ]</span> a month.</h6>
-
-      </div>
-    
-    
-  </form>
-  </main>
+    </main>
 
 
-  <footer class="mt-auto text-white-50">
-    <p>Website by Giulio Ammendola using <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a></p>
-  </footer>
-</div>
+    <footer class="mt-auto text-white-50">
+      <p>Website by Giulio Ammendola using <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a></p>
+    </footer>
+  </div>
 
 
   <script src="./script.js"></script>
