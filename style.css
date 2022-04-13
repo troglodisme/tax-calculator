@@ -1,6 +1,5 @@
 /* animations */
 
-
  @keyframes cash {
 	0%,
 	100% {
@@ -36,7 +35,6 @@
 }
 
 
-
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -56,7 +54,6 @@ body {
 }
 
 .hidden {
-
   visibility:hidden;
 }
 
@@ -109,7 +106,7 @@ body {
 }
 
 .rel:hover > .money{
-  animation: cash 2s ease 0s 1 normal forwards; */
+  animation: cash 2s ease 0s 1 normal forwards;
 }
 
 /* media q */

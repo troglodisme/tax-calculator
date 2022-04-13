@@ -148,6 +148,7 @@ function calculateTax(taxPercentage, income){
     //round that up for monthly salary
     let takeHomeMonthly = Math.round(takeHome / 12);
     console.log(`you will take ${takeHome} home after taxes in a month`);
+    console.log("************")
 
     return [taxCalculated, takeHome, takeHomeMonthly];
 }
